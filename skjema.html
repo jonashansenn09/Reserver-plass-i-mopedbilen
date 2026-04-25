@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Skjema – Reserver plass</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="form-body">
+
+<a href="index.html" class="back-btn">Tilbake</a>
+
+<div class="container">
+    <h2>Reserver plass i Jonas sin mopedbil</h2>
+
+    <form id="mopedForm">
+
+        <!-- NAVN -->
+        <label>Navn:</label>
+        <input type="text" name="navn" required>
+
+        <!-- ALDER -->
+        <label>Alder:</label>
+        <input type="number" name="alder" required>
+        <p class="small-text">Merk: Alder informasjonen er nødvendig slik at jeg vet om du er hardt sårbar eller ikke</p>
+
+        <!-- TELEFON -->
+        <label>Telefonnummer:</label>
+        <input type="tel" name="telefon" required>
+
+        <!-- ADRESSE -->
+        <label>Adresse:</label>
+        <input type="text" name="adresse" required>
+
+        <!-- CHECKBOX -->
+        <label class="checkbox">
+            <input type="checkbox" required>
+            Jeg godtar at jeg selv står ansvarlig for alt som skjer under kjøreturen, selv om det kan resultere i fatale skader.
+        </label>
+
+        <!-- SEND INN -->
+        <button type="submit">Reserver plass</button>
+    </form>
+</div>
+
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-box">
+        <h2>Du er snart ferdig med reserveringen</h2>
+        <p>Du har nå fylt ut skjemaet, og trykket at du godtar alt som skjer under kjøring uansett konsekvenser.</p>
+        <p><strong>Er du helt sikker på din beslutning?</strong></p>
+
+        <div class="popup-buttons">
+            <button class="popup-btn-yes" id="yesBtn">Ja, jeg er sikker</button>
+            <button class="popup-btn-no" id="noBtn">Nei, jeg er ikke sikker</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("mopedForm");
+    const popup = document.getElementById("popup");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        popup.style.display = "flex";
+    });
+
+    yesBtn.addEventListener("click", function() {
+        window.location.href = "bekreftelse.html";
+    });
+
+    noBtn.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,450 @@
+/* GLOBAL FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================= */
+/*         INDEX SIDE        */
+/* ========================= */
+
+/* Bakgrunnsbilde – bytt gjerne til ditt eget */
+.index-body {
+    background: url("media/bilder/bil1.jpg") center/cover no-repeat fixed;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mørk overlay for dramatisk effekt */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(2px);
+}
+
+/* Midtstilt innhold */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 42%; /* løfter alt opp på PC */
+    transform: translateY(-42%);
+    color: white;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.index-title {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 
+        2px 2px 0px black,
+        -2px 2px 0px black,
+        2px -2px 0px black,
+        -2px -2px 0px black;
+}
+.index-sub {
+    font-size: 22px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Glass-knapper */
+.btn {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    padding: 18px 40px;
+    font-size: 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.08);
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Fade-in animasjon */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-60%); }
+    to { opacity: 1; transform: translateY(-42%); }
+}
+
+/* ========================= */
+/*       TILBAKE-KNAPP       */
+/* ========================= */
+
+.back-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: white;
+    color: #1c6dd0;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* ========================= */
+/*        SKJEMA SIDE        */
+/* ========================= */
+
+.form-body {
+    background: #979797;
+    padding: 40px;
+}
+
+/* CARD PRO – Premium skjema */
+.container {
+    background: white;
+    padding: 45px;
+    max-width: 520px;
+    margin: auto;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    border: 1px solid #566ca0;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 28px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #000000;
+}
+
+/* Input-felt – større, rundere, renere */
+input[type="text"], 
+input[type="number"], 
+input[type="tel"] {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: 2px solid #c7d3e8;
+    font-size: 17px;
+    margin-bottom: 18px;
+    transition: 0.2s;
+    background: #f8faff;
+}
+
+input:focus {
+    border-color: #30527c;
+    outline: none;
+    box-shadow: 0 0 8px rgba(39, 56, 77, 0.25);
+}
+
+/* Checkbox */
+.checkbox {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 700; /* gjør teksten tykkere */
+    line-height: 1.5;
+}
+
+
+/* Knapp */
+button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #d4d3d3, #111111);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 25px; /* flytter knappen ned */
+}
+
+button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+
+/* Liten tekst */
+.small-text {
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-top: -10px;
+    margin-bottom: 18px;
+}
+
+
+/* ========================= */
+/*           POPUP           */
+/* ========================= */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-box {
+    background: white;
+    padding: 30px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.popup-btn-yes,
+.popup-btn-no {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.popup-btn-yes {
+    background: #1c6dd0;
+    color: white;
+}
+
+.popup-btn-no {
+    background: #d9534f;
+    color: white;
+}
+
+/* ========================= */
+/*     NY BEKREFTELSE SIDE   */
+/* ========================= */
+
+.confirm-body {
+    background: linear-gradient(135deg, #dce7ff, #f3f6ff);
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.confirm-wrapper {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    animation: fadeIn 0.9s ease-out;
+}
+
+.confirm-icon {
+    font-size: 70px;
+    color: #1c6dd0;
+    background: white;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border: 3px solid #1c6dd0;
+}
+
+.confirm-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.confirm-sub {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 35px;
+}
+
+.confirm-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.confirm-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Fade-in animasjon */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========================= */
+/*     PREMIUM GALLERI       */
+/* ========================= */
+
+.gallery-body {
+    background: #3c3d3f;
+    padding: 40px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.gallery-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.gallery-sub {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* KORT */
+.gallery-card {
+    background: rgba(121, 118, 118, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: 0.25s ease;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 14px 35px rgba(121, 118, 118, 0.25);
+}
+
+/* BILDER */
+.gallery-card img {
+    width: 100%;
+    border-radius: 16px;
+    transition: 0.25s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+/* TEKST */
+.gallery-caption {
+    font-size: 15px;
+    margin-top: 12px;
+    opacity: 0.85;
+    font-weight: 600;
+}
+
+/* Fade-in animasjon */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========================= */
+/*      MOBILVENNLIG INDEX   */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .index-title {
+        font-size: 36px;
+        margin-bottom: 5px;
+    }
+
+    .index-sub {
+        font-size: 16px;
+        margin-bottom: 25px;
+        padding: 0 20px;
+    }
+
+    .button-wrapper {
+        gap: 18px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .hero-content {
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 20px;
+    }
+}
+
+/* EKSTRA LITEN MOBIL */
+@media (max-width: 480px) {
+
+    .index-title {
+        font-size: 30px;
+    }
+
+    .index-sub {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
